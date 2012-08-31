@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{3787c2f9-8447-4ede-b2f8-4cae14b2975b}</ProjectGuid>
+    <ProjectHome>.</ProjectHome>
+    <StartupFile>Program.py</StartupFile>
+    <SearchPath>
+    </SearchPath>
+    <WorkingDirectory>.</WorkingDirectory>
+    <IsWindowsApplication>True</IsWindowsApplication>
+    <AssemblyName>3.8.4</AssemblyName>
+    <Name>3.8.4</Name>
+    <RootNamespace>3.8.4</RootNamespace>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <DebugSymbols>true</DebugSymbols>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <DebugSymbols>true</DebugSymbols>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+  </PropertyGroup>
+  <ItemGroup>
+    <None Include="grammar.grm" />
+    <None Include="Program.py" />
+    <None Include="pygold\Action.py" />
+    <None Include="pygold\ActionTable.py" />
+    <None Include="pygold\Consts.py" />
+    <None Include="pygold\ContainerProxy.py" />
+    <None Include="pygold\EnumHelper.py" />
+    <None Include="pygold\GrammarReader.py" />
+    <None Include="pygold\Graph.py" />
+    <None Include="pygold\LICENSE.txt" />
+    <None Include="pygold\LookAheadReader.py" />
+    <None Include="pygold\Parser.py" />
+    <None Include="pygold\README.txt" />
+    <None Include="pygold\Reduction.py" />
+    <None Include="pygold\Rule.py" />
+    <None Include="pygold\Symbol.py" />
+    <None Include="pygold\Token.py" />
+    <None Include="pygold\TokenStack.py" />
+    <None Include="pygold\__init__.py" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="pygold" />
+  </ItemGroup>
+</Project>

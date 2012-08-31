@@ -1,0 +1,60 @@
+// myatl2.idl : IDL source for myatl2
+//
+
+// This file will be processed by the MIDL tool to
+// produce the type library (myatl2.tlb) and marshalling code.
+
+import "oaidl.idl";
+import "ocidl.idl";
+
+[
+	object,
+	uuid(a817e7a2-43fa-11d0-9e44-00aa00b6770a),
+	dual,	
+	pointer_default(unique)
+]
+interface IComponentRegistrar : IDispatch
+{
+	[id(1)]	HRESULT Attach([in] BSTR bstrPath);
+	[id(2)]	HRESULT RegisterAll();
+	[id(3)]	HRESULT UnregisterAll();
+	[id(4)]	HRESULT GetComponents([out] SAFEARRAY(BSTR)* pbstrCLSIDs, [out] SAFEARRAY(BSTR)* pbstrDescriptions);
+	[id(5)]	HRESULT RegisterComponent([in] BSTR bstrCLSID);
+	[id(6)] HRESULT UnregisterComponent([in] BSTR bstrCLSID);
+};
+
+[
+	object,
+	uuid(5B91A23D-8FC0-457F-B306-756001950F95),
+	dual,
+	nonextensible,
+	pointer_default(unique)
+]
+interface IPrimeTester : IDispatch{
+	[id(1)] HRESULT IsPrime([in] int number, [out, retval] int *state);
+	[id(2)] HRESULT IsPrime2([in] int number, [out,retval] int* state);
+};
+[
+	uuid(EECB6B20-C84A-4A7E-A594-1FC726F901BB),
+	version(1.0),
+	custom(a817e7a1-43fa-11d0-9e44-00aa00b6770a,"{DA3A4375-8F8B-4B82-943D-725A889B0559}")
+]
+library myatl2Lib
+{
+	importlib("stdole2.tlb");
+	[
+		uuid(DA3A4375-8F8B-4B82-943D-725A889B0559)		
+	]
+	coclass CompReg
+	{
+		[default] interface IComponentRegistrar;
+	};
+	[		
+		uuid(23FF20E7-F37C-4E68-8BBC-864E7A4F9B59)		
+	]
+	coclass PrimeTester
+	{
+		[default] interface IPrimeTester;
+	};
+};
+

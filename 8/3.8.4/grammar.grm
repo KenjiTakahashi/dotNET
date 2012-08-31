@@ -1,0 +1,14 @@
+"Name" = 'DerivativeGrammar'
+"Author" = 'Karol Kenji Takahashi Wozniak'
+"About" = 'Simple derivatives parser grammar.'
+"Version" = '0.1'
+
+"Case Sensitive" = False
+"Start Symbol" = <Derivative>
+
+Derivent = {Number}*{Number}*{Letter}+'^'{Number}+'-1'
+
+<Derivative> ::= <Derivative>'+'<Derivative>
+				| <Derivative>'-'<Derivative>
+				| <NDerivative><NDerivative>
+<NDerivative> ::= Func<Derivative> + <Derivative>Func

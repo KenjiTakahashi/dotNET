@@ -1,0 +1,26 @@
+HKCR
+{
+	myatl2.PrimeTester.1 = s 'PrimeTester Class'
+	{
+		CLSID = s '{23FF20E7-F37C-4E68-8BBC-864E7A4F9B59}'
+	}
+	myatl2.PrimeTester = s 'PrimeTester Class'
+	{
+		CurVer = s 'myatl2.PrimeTester.1'
+	}
+	NoRemove CLSID
+	{
+		ForceRemove {23FF20E7-F37C-4E68-8BBC-864E7A4F9B59} = s 'PrimeTester Class'
+		{
+			ProgID = s 'myatl2.PrimeTester.1'
+			VersionIndependentProgID = s 'myatl2.PrimeTester'
+			ForceRemove Programmable
+			InprocServer32 = s '%MODULE%'
+			{
+				val ThreadingModel = s 'Both'
+			}
+			TypeLib = s '{EECB6B20-C84A-4A7E-A594-1FC726F901BB}'
+			Version = s '1.1'
+		}
+	}
+}
